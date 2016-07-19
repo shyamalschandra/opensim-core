@@ -27,7 +27,7 @@
 #include <OpenSim/Common/Component.h>
 #include <OpenSim/Common/Set.h>
 #include "ModelComponent.h"
-#include "ModelDisplayHints.h"
+#include <OpenSim/Common/ModelDisplayHints.h>
 #include "Appearance.h"
 
 namespace OpenSim { 

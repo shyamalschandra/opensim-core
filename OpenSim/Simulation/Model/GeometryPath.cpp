@@ -34,7 +34,7 @@
 #include "CoordinateSet.h"
 #include "Model.h"
 #include "ModelVisualizer.h"
-#include "ModelDisplayHints.h"
+#include <OpenSim/Common/ModelDisplayHints.h>
 //=============================================================================
 // STATICS
 //=============================================================================
