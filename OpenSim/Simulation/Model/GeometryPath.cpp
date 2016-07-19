@@ -157,9 +157,8 @@ generateDecorations(bool fixed, const ModelDisplayHints& hints,
         pos = point->getBody().getTransformInGround(state)*point->getLocation();
 
         if (hints.get_show_path_points())
-            DefaultGeometry::drawPathPoint(body, loc_B, getColor(state),
-            appendToThis);
-        Vec3 pos = matter.getMobilizedBody(body).getBodyTransform(state)*loc_B;
+            DefaultGeometry::drawPathPoint(mbix, pos, getColor(state), appendToThis);
+
         // Line segments will be in ground frame
         if (hints.get_show_path_geometry()) {
             appendToThis.push_back(DecorativeLine(lastPos, pos)
