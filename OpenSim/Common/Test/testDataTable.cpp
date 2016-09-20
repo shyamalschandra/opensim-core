@@ -182,5 +182,28 @@ int main() {
                 "(\"Filename\").getValue<std::string>() != std::string"
                 "{\"/path/to/file\"}"};
 
+    {
+        DataTable dt{};
+        dt.setColumnLabels({"col0", "col1", "col2", "col3"});
+        for(auto i = 1; i < 4; ++i) {
+            double time = 0.1 * i;
+            double rowVal = i;
+            dt.appendRow(time, {rowVal, rowVal, rowVal, rowVal});
+        }
+        std::cout << dt.getRowAtIndex(0)[3] << std::endl;
+        std::cout << dt.getRowAtIndex(0)(3) << std::endl;
+        std::cout << dt.getRowAtIndex(0)[4] << std::endl;
+        std::cout << dt.getRowAtIndex(0)(4) << std::endl;
+        std::cout << dt.getRowAtIndex(0)[5] << std::endl;
+        std::cout << dt.getRowAtIndex(0)(5) << std::endl;
+
+        // Output on my machine:
+        // 1
+        // 1
+        // 3.93147e-315
+        // 3.93147e-315
+        // 1.36752e-316
+        // 1.36752e-316
+    }
     return 0;
 }

@@ -68,6 +68,17 @@ class TestDataTable(unittest.TestCase):
         assert table.hasColumn(0)
         assert table.hasColumn(2)
 
+        table = osim.DataTable()
+        table.setColumnLabels(['col0', 'col1', 'col2', 'col3'])
+        row = osim.RowVector([1, 1, 1, 1])
+        table.appendRow(0.1, row)
+        row = osim.RowVector([2, 2, 2, 2])
+        table.appendRow(0.2, row)
+        row = osim.RowVector([3, 3, 3, 3])
+        table.appendRow(0.3, row)
+        print table.getRowAtIndex(0)[3]
+        print table.getRowAtIndex(0)[4]
+
 
     def test_TimeSeriesTable(self):
         table = osim.TimeSeriesTable()
